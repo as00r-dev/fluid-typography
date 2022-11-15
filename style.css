@@ -1,0 +1,41 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Simple CSS Resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+body {
+	background: #121212;
+	padding: 1.5rem 0;
+}
+
+/* Wrapper 
+
+    width   =>  min limits the width to not be more than 80ch
+                and if it cant be 80ch, it will be (100vw - 5rem). 
+                Essentially making the container responsive.
+
+    padding =>  top margin is fixed to 1.5rem and left-right margin
+                is clamped. What this means is, the padding will never be 
+                less than 1rem and more than 3rem. And if there is enough 
+                space, it will be 5% of the width of parent (in this case body).
+
+    Hence, we have made a responsive container without using any media queries.
+*/
+.wrapper {
+	color: #121212;
+	background: antiquewhite;
+	width: min(80ch, 100vw - 5rem);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: min(1rem, 5%);
+	padding: 1.5rem clamp(1rem, 5%, 3rem);
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+		rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
